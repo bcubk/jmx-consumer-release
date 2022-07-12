@@ -1,5 +1,5 @@
 name: jmx-consumer
 blobstore:
-  provider: gcs
+  provider: local
   options:
-    bucket_name: jmx-consumer-release
+    blobstore_path: openjdk/openjdk-9.0.4_linux-x64_bin.tar.gz
