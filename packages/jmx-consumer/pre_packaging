@@ -10,7 +10,7 @@ if [ `uname` = "Linux" ]; then
   mkdir java
   cd java
   tar zxvf ../openjdk/openjdk-*.tar.gz
-  export JAVA_HOME=${BUILD_DIR}/java
+  export JAVA_HOME=${BUILD_DIR}/java/jdk-9.0.4
 else
   if [ ! -d $JAVA_HOME ]; then
     echo "JAVA_HOME properly set is required for non Linux/Darwin builds."
@@ -23,6 +23,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 #build cloud foundry jmx-consumer jar
 cd ${BUILD_DIR}/jmxconsumer
+
+# Run build
 ./gradlew :clean :assemble
 cp build/libs/*.jar ${BUILD_DIR}/jmxconsumer
 
